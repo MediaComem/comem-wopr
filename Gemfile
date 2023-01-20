@@ -11,7 +11,7 @@ gem 'slim', '~> 4.0', '>= 4.0.1'
 # Database
 gem 'redis', '~> 4.0'
 gem 'activemodel', '~> 6.0', '>= 6.0.2.1'
-gem 'activesupport', '~> 6.0', '>= 6.0.2.1'
+gem 'activesupport', '~> 6.1'
 
 # Colorized command line output
 gem 'paint', '~> 2.0'
