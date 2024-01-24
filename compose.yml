@@ -1,0 +1,39 @@
+services:
+  # Reverse proxy
+  rp:
+    image: nginx:1.25.3-alpine
+    depends_on:
+      - app
+    networks:
+      - front-tier
+    ports:
+      - "8080:80"
+    restart: always
+    volumes:
+      - ./nginx.conf:/etc/nginx/nginx.conf
+
+  # Application
+  app:
+    image: wopr/app
+    build: .
+    depends_on:
+      - db
+    environment:
+      WOPR_REDIS_URL: redis://db:6379/0
+    networks:
+      - front-tier
+      - back-tier
+    restart: always
+
+  # Database
+  db:
+    image: redis:7.2.4-alpine
+    networks:
+      - back-tier
+    restart: always
+    volumes:
+      - ./todolist.sql:/docker-entrypoint-initdb.d/todolist.sql:ro
+
+networks:
+  back-tier:
+  front-tier:
