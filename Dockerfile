@@ -12,12 +12,14 @@ FROM ruby:3.2.3-alpine
 
 WORKDIR /usr/src/app
 
-RUN apk add --no-cache build-base
+RUN apk add --no-cache build-base && \
+    addgroup -S wopr && adduser -S wopr -G wopr && \
+    chown -R wopr:wopr /usr/src/app
 
-COPY Gemfile Gemfile.lock ./
+COPY --chown=wopr:wopr Gemfile Gemfile.lock ./
 RUN bundle install
 
-COPY ./ ./
-COPY --from=build /usr/src/app/public/ ./public/
+COPY --chown=wopr:wopr ./ ./
+COPY --chown=wopr:wopr --from=build /usr/src/app/public/ ./public/
 
 CMD ["bundle", "exec", "ruby", "app.rb"]
