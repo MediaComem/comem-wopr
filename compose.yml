@@ -1,3 +1,5 @@
+name: wopr
+
 services:
   # Reverse proxy service
   rp:
