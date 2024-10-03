@@ -2,6 +2,9 @@
 
 Play tic-tac-toe against the WOPR.
 
+[![build](https://github.com/MediaComem/comem-wopr/actions/workflows/build.yml/badge.svg)](https://github.com/MediaComem/comem-wopr/actions/workflows/build.yml)
+[![license](https://img.shields.io/github/license/MediaComem/wopr)](https://opensource.org/licenses/MIT)
+
 <!-- START doctoc generated TOC please keep comment here to allow auto update -->
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
 
