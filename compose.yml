@@ -1,0 +1,31 @@
+name: wopr
+
+services:
+  app:
+    image: archidep/wopr
+    build: .
+    depends_on:
+      - db
+    environment:
+      WOPR_REDIS_URL: redis://db:6379/0
+    networks:
+      - app
+      - db
+    ports:
+      - "${WOPR_PORT:-4567}:4567"
+    restart: unless-stopped
+
+  db:
+    image: redis:7.4.0-alpine
+    networks:
+      - db
+    restart: unless-stopped
+    volumes:
+      - db_data:/data
+
+networks:
+  app:
+  db:
+
+volumes:
+  db_data:
