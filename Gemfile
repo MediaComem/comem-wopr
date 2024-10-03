@@ -4,8 +4,9 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 ruby '>= 2.7.0', '< 4.0'
 
 # Web
-gem 'sinatra', '~> 3.1'
-gem 'sinatra-contrib', '~> 3.1'
+gem 'sinatra', '~> 4.0'
+gem 'sinatra-contrib', '~> 4.0'
+gem "rackup", '~> 2.1'
 gem 'slim', '~> 5.2'
 
 # Database
