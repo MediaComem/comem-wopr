@@ -27,7 +27,7 @@ Play tic-tac-toe against the WOPR.
 
 ### Requirements
 
-* [Ruby](https://www.ruby-lang.org) 3.1, 3.2 or 3.3
+* [Ruby](https://www.ruby-lang.org) 3.x
 * [Node.js](https://nodejs.org) 22.x
 * [Redis](https://redis.io) 4+
 
