@@ -20,6 +20,9 @@ gem 'paint', '~> 2.0'
 # Application server
 gem 'puma', '~> 6.4'
 
+# Utilities
+gem 'ostruct', '~> 0.6.1'
+
 group :test do
   # Automated tests
   gem 'rspec', '~> 3.9'
